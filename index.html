@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #002855;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 40px;
+            width: 40px;
+            margin-right: 0.5rem;
+        }
+        nav {
+            display: none;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #cccccc;
+        }
+        .menu-button {
+            display: block;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+        .mobile-menu {
+            display: none;
+            background-color: #002855;
+        }
+        .mobile-menu a {
+            display: block;
+            padding: 1rem;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .mobile-menu a:hover {
+            background-color: #333333;
+        }
+        @media (min-width: 768px) {
+            nav {
+                display: flex;
+            }
+            .menu-button {
+                display: none;
+            }
+        }
+        .home-page {
+            background: url('bac.jpg');
+            background-size: cover;
+            height: 600px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            padding-top: 60px; /* To offset the fixed header */
+        }
+        .home-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 1;
+        }
+        .home-page h1, .stats {
+            z-index: 2;
+            position: relative;
+        }
+        .home-page h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 2rem;
+        }
+        .stats div {
+            text-align: center;
+        }
+        .stats div h2 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .popup-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #002855;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+        .section {
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .footer {
+            background-color: #002855;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .footer a {
+            color: white;
+            margin: 0 0.5rem;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Ennovate Logo">
+                <span>Ennovate</span>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#events">Events</a>
+                <a href="imag.html">Gallery</a>
+                <a href="#sectors">Sectors</a>
+            </nav>
+            <button class="menu-button" id="menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#events">Events</a>
+            <a href="imag.html">Gallery</a>
+            <a href="#sectors">Sectors</a>
+        </div>
+    </header>
+
+    <div class="home-page" id="home">
+        <h1>Welcome to Ennovate</h1>
+        <div class="stats">
+            <div>
+                <h2>50+</h2>
+                <p>Events Attended</p>
+            </div>
+            <div>
+                <h2>20+</</h2>
+                <p>Events Won</p>
+            </div>
+            <div>
+                <h2>10+</h2>
+                <p>Upcoming Events</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="about">
+        <h2>About Us</h2>
+        <p>Information about the club...</p>
+    </div>
+
+    <div class="section" id="events">
+        <h2>Events</h2>
+        <p>Details of past and upcoming events...</p>
+    </div>
+
+    <div class="section" id="gallery">
+        <h2>Gallery</h2>
+        <p>Photos and videos...</p>
+    </div>
+
+    <div class="section" id="sectors">
+        <h2>Sectors</h2>
+        <p>Different sectors present in the club...</p>
+    </div>
+
+    <button class="popup-button" id="popup-button">Register</button>
+
+    <div class="footer">
+        <p>Follow us on:</p>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <p>&copy; 2023 Ennovate. All rights reserved.</p>
+    </div>
+
+    <script>
+        document.getElementById('menu-button').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        });
+
+        window.addEventListener('scroll', function() {
+            var popupButton = document.getElementById('popup-button');
+            if (window.scrollY > document.getElementById('home').offsetHeight) {
+                popupButton.style.display = 'block';
+            } else {
+                popupButton.style.display = 'none';
+            }
+        });
+
+        document.getElementById('popup-button').addEventListener('click', function() {
+            window.location.href = 'https://forms.gle/your-google-form-link'; // Replace with the actual Google Form link
+        });
+    </script>
+</body>
+</html>
